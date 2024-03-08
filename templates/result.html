@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculator App</h1>
+    </header>
+    
+    <div style="width: 30%; padding: 10px; margin: 10px auto; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; background-color: #f9f9f9; color: #333; font-weight: bold; text-align: center;">{{ result }}</div>
+    
+    <form action="{{ url_for('index') }}" method="GET">  
+        <input type="submit" value="Back" class="button">
+    </form>
+    
+</body>
+</html>

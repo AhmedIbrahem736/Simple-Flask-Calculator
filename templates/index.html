@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculator App</h1>
+    </header>
+
+    <form id="calculatorForm" action="{{ url_for('calculate') }}" method="POST" onsubmit="return validateForm()">  
+        <input type="number" name="number_1" placeholder="Enter number 1">
+        <input type="number" name="number_2" placeholder="Enter number 2">
+        <select class="form-control" name="operation">
+            <option>Addition</option>
+            <option>Subtraction</option>
+            <option>Multiplication</option>
+            <option>Division</option>
+        </select>
+        <input type="submit" value="Calculate" class="button">
+    </form>
+
+    <script>
+        function validateForm() {
+            var number1 = document.forms["calculatorForm"]["number_1"].value;
+            var number2 = document.forms["calculatorForm"]["number_2"].value;
+
+            if (number1 === "" || number2 === "") {
+                alert("Please enter values for both numbers.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
